@@ -8,3 +8,19 @@ SELECT
       WHERE e.id = s.employee_id
         ORDER BY p DESC, e.name
 LIMIT 8 OFFSET 0;
+
+#usefull for view(compare) only 
+#id in readable format
+SELECT
+ BIN_TO_UUID(employee.id) as id,
+ employee.name,
+ salary.rate,
+ salary.kind
+FROM
+ employee
+INNER JOIN
+ salary
+ON
+ id = employee_id
+WHERE
+ name like 'spoke';

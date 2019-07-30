@@ -1,9 +1,9 @@
-drop SCHEMA bookkeeping;
+drop SCHEMA if EXISTS bookkeeping;
 create SCHEMA bookkeeping;
 SAVEPOINT schema_created_point;
 
 create TABLE bookkeeping.employee(
-  id BINARY(16) PRIMARY KEY,
+  id VARBINARY(16) PRIMARY KEY,
   name VARCHAR(20)
 );
 SAVEPOINT create_employee_point;
@@ -15,7 +15,7 @@ CREATE TABLE bookkeeping.salary_kind(
 SAVEPOINT create_paymentkind_point;
 
 CREATE TABLE bookkeeping.salary(
-  employee_id BINARY(16) NOT NULL,
+  employee_id VARBINARY(16) NOT NULL,
   rate DECIMAL(30, 10),
   kind VARCHAR(10),
   CONSTRAINT salary_kind_fk FOREIGN KEY (kind)

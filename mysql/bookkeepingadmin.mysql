@@ -1,0 +1,7 @@
+DROP USER bookkeepingadmin;
+
+CREATE USER bookkeepingadmin IDENTIFIED BY 'bookkeepingadmin1pass';
+
+GRANT ALL PRIVILEGES ON bookkeeping.* TO bookkeepingadmin@'%' ;
+
+COMMIT WORK ;

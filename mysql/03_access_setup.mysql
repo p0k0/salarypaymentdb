@@ -1,0 +1,16 @@
+FLUSH PRIVILEGES;
+DROP USER 'app'@'localhost';
+
+CREATE USER 'app'@'localhost' IDENTIFIED BY '12adfa548fdsdf15sa4f853j7y9n1cx5jk3';
+
+DROP USER 'webapprole'@'localhost';
+CREATE ROLE 'webapprole'@'localhost';
+
+GRANT SELECT ON bookkeeping.* TO 'webapprole'@'localhost';
+GRANT UPDATE ON bookkeeping.* TO 'webapprole'@'localhost';
+GRANT INSERT ON bookkeeping.* TO 'webapprole'@'localhost';
+GRANT EXECUTE ON bookkeeping.* TO 'webapprole'@'localhost';
+
+GRANT 'webapprole'@'localhost' TO 'app'@'localhost';
+
+SHOW GRANTS FOR 'webapprole'@'localhost';

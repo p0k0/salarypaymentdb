@@ -1,5 +1,7 @@
 reset_pwd.sql
 reset_pwd.bat
 
-bookkeepingadmin.sql
-03_access_setup.sql
+bookkeepingadmin.mysql
+03_access_setup.mysql
+
+.gitignore
